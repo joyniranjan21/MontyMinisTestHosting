@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Localization-String-Tables-Tswana (South Africa) (tn-ZA)
+  m_EditorClassIdentifier: 
+  m_GroupName: Localization-String-Tables-Tswana (South Africa) (tn-ZA)
+  m_GUID: a7d1e461894200f4596467a4cb41671e
+  m_SerializeEntries: []
+  m_ReadOnly: 1
+  m_Settings: {fileID: 11400000, guid: ba7398867925e8645b49424380598b5e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: ea5ad03835eec344fa59131a28d22d59, type: 2}
+    - {fileID: 11400000, guid: 13477695cbf9ecb4cb9beba34d0d0bf9, type: 2}

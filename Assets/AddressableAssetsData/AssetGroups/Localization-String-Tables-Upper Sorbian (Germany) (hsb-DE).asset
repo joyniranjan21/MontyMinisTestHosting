@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Localization-String-Tables-Upper Sorbian (Germany) (hsb-DE)
+  m_EditorClassIdentifier: 
+  m_GroupName: Localization-String-Tables-Upper Sorbian (Germany) (hsb-DE)
+  m_GUID: 1e8fcdf74c513bd419e0cafadcf7b161
+  m_SerializeEntries: []
+  m_ReadOnly: 1
+  m_Settings: {fileID: 11400000, guid: ba7398867925e8645b49424380598b5e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 52c979919f79fce459666a33a90b10ae, type: 2}
+    - {fileID: 11400000, guid: 04e3881545ba3c342a7391677facdefb, type: 2}

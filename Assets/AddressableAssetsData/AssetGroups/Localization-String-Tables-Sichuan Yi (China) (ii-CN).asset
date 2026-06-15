@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Localization-String-Tables-Sichuan Yi (China) (ii-CN)
+  m_EditorClassIdentifier: 
+  m_GroupName: Localization-String-Tables-Sichuan Yi (China) (ii-CN)
+  m_GUID: 1a013fd36823fc4438ecb96fb92147c9
+  m_SerializeEntries: []
+  m_ReadOnly: 1
+  m_Settings: {fileID: 11400000, guid: ba7398867925e8645b49424380598b5e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 64e124e5ef6b57d41ac12e7a6f9227d4, type: 2}
+    - {fileID: 11400000, guid: 8286dcdb1056f6d4ca5d35f75e956cfb, type: 2}
