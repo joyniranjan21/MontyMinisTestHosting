@@ -10,26 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
-  m_Name: Coqui Forest Intro_en
+  m_Name: Forest_zh-Hans
   m_EditorClassIdentifier: 
   m_LocaleId:
-    m_Code: en
+    m_Code: zh-Hans
   m_SharedData: {fileID: 11400000, guid: 65e7fc926c83a544c9eb6456786b17da, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData:
-  - m_Id: 6732529664
-    m_Localized: hi!
-    m_Metadata:
-      m_Items: []
-  - m_Id: 203734794240
-    m_Localized: hi 2
-    m_Metadata:
-      m_Items: []
-  - m_Id: 253995139072
-    m_Localized: hi 3
-    m_Metadata:
-      m_Items: []
+  m_TableData: []
   references:
     version: 2
     RefIds: []

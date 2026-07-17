@@ -16,7 +16,7 @@ MonoBehaviour:
   m_GUID: 3e2817bcca2abde46b64504a0d0d4701
   m_SerializeEntries:
   - m_GUID: fdc48981e62184343be609d46b84e4ef
-    m_Address: Coqui Forest Intro_fr
+    m_Address: Forest_fr
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-fr

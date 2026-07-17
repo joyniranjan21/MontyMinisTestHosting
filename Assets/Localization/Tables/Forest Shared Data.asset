@@ -10,21 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
-  m_Name: Coqui Forest Intro Shared Data
+  m_Name: Forest Shared Data
   m_EditorClassIdentifier: 
-  m_TableCollectionName: Coqui Forest Intro
+  m_TableCollectionName: Forest
   m_TableCollectionNameGuidString: 65e7fc926c83a544c9eb6456786b17da
   m_Entries:
   - m_Id: 6732529664
-    m_Key: forest_intro_1
+    m_Key: F1
     m_Metadata:
       m_Items: []
   - m_Id: 203734794240
-    m_Key: forest_intro_2
+    m_Key: F2
     m_Metadata:
       m_Items: []
   - m_Id: 253995139072
-    m_Key: forest_intro_3
+    m_Key: F3
     m_Metadata:
       m_Items: []
   m_Metadata:

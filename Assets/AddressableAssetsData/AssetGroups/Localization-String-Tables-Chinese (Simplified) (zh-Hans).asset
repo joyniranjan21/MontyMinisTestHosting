@@ -16,7 +16,7 @@ MonoBehaviour:
   m_GUID: 1a67e7426b284e34b8f1091e42f878f2
   m_SerializeEntries:
   - m_GUID: 07f8eebe7a1220c49be809cd468e1cb8
-    m_Address: Coqui Forest Intro_zh-Hans
+    m_Address: Forest_zh-Hans
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-zh-Hans
