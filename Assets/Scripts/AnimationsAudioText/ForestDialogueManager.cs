@@ -19,6 +19,9 @@ public class ForestDialogueManager : MonoBehaviour
     [SerializeField] private string keyPrefix = "F"; // e.g., "F_1", "F_2" instead of "R1_1"
     [SerializeField] private float typingSpeed = 0.03f;
 
+    [Header("Camera Control")]
+    [SerializeField] private CameraPanner cameraPanner;
+
     private StringTable _stringTable;
     private int scene = 1;
     
@@ -133,10 +136,22 @@ public class ForestDialogueManager : MonoBehaviour
 
     private void EndDialogue()
     {
-        // Hide everything when finished
+        // Hide the background and button
         speechBubble.SetActive(false);
         if (continueButton != null) continueButton.SetActive(false);
         
-        // Add any logic here for what happens when the forest scene clickthrough is totally finished
+        // Wipe the text and hide the text component just in case
+        speechText.text = "";
+        speechText.gameObject.SetActive(false); 
+        
+        // Trigger the camera pan to the second scene
+        if (cameraPanner != null)
+        {
+            cameraPanner.StartPanToTarget();
+        }
+        else
+        {
+            Debug.LogWarning("Camera Panner is not assigned in the ForestDialogueManager!");
+        }
     }
 }
