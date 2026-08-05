@@ -15,6 +15,12 @@ MonoBehaviour:
   m_GroupName: Localization-String-Tables-French (fr)
   m_GUID: 3e2817bcca2abde46b64504a0d0d4701
   m_SerializeEntries:
+  - m_GUID: a6bbaaad63751cb4fb252bea1c2396d5
+    m_Address: Lab_fr
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-fr
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fdc48981e62184343be609d46b84e4ef
     m_Address: Forest_fr
     m_ReadOnly: 1

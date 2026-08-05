@@ -1811,7 +1811,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 972955600}
-  - component: {fileID: 972955599}
+  - component: {fileID: 972955601}
   m_Layer: 0
   m_Name: ForestDialogueManager
   m_TagString: Untagged
@@ -1819,25 +1819,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &972955599
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 972955598}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1c249055f36714478978bb5c15a2f92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speechBubble: {fileID: 979399718}
-  speechText: {fileID: 559734030}
-  continueButton: {fileID: 1454646690}
-  tableName: Forest
-  keyPrefix: F
-  typingSpeed: 0.03
-  cameraPanner: {fileID: 875179176}
 --- !u!4 &972955600
 Transform:
   m_ObjectHideFlags: 0
@@ -1853,6 +1834,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &972955601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 972955598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efd85bd332f3fff438c7b168c0ac14b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speechBubble: {fileID: 979399718}
+  speechText: {fileID: 559734030}
+  continueButton: {fileID: 1036660369}
+  tableName: Forest
+  keyPrefix: F
+  typingSpeed: 0.03
+  cameraPanner: {fileID: 875179176}
 --- !u!1 &979399718
 GameObject:
   m_ObjectHideFlags: 0
@@ -1987,8 +1987,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 972955599}
-        m_TargetAssemblyTypeName: ForestDialogueManager, Assembly-CSharp
+      - m_Target: {fileID: 972955601}
+        m_TargetAssemblyTypeName: GeneralDialogueManager, Assembly-CSharp
         m_MethodName: onContinueClick
         m_Mode: 1
         m_Arguments:
@@ -2601,7 +2601,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1510799840}
   m_Layer: 0
-  m_Name: Forest Intro
+  m_Name: Forest Intro Environment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2949,7 +2949,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 6
   m_Sprite: {fileID: 1523618883513945252, guid: 9be7d3fbc86576a47a0cd85b9dbb7f8c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

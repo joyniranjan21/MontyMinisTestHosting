@@ -7,134 +7,59 @@ using UnityEngine.Localization.Settings;
 using UnityEngine.Localization.Tables;
 using UnityEngine.ResourceManagement.AsyncOperations;
 
-public class ForestDialogueManager : MonoBehaviour
+public class ForestDialogueManager : GeneralDialogueManager
 {
-    [Header("UI Elements")]
-    [SerializeField] private GameObject speechBubble;
-    [SerializeField] private TMP_Text speechText;
-    [SerializeField] private GameObject continueButton;
-
-    [Header("Localization & Settings")]
-    [SerializeField] private string tableName = "Forest"; // Change to your forest dialogue table name
-    [SerializeField] private string keyPrefix = "F"; // e.g., "F_1", "F_2" instead of "R1_1"
-    [SerializeField] private float typingSpeed = 0.03f;
 
     [Header("Camera Control")]
     [SerializeField] private CameraPanner cameraPanner;
 
-    private StringTable _stringTable;
-    private int scene = 1;
-    
-    // Typewriter state tracking
-    private bool isTyping = false;
-    private string currentFullText = "";
-    private Coroutine typingCoroutine;
+    private bool _isContinuePressed = false; // Add this flag
 
-    private async void Awake()
+    // Add this new method for the UI Button
+    public void OnForestContinueClick()
     {
-        // Hide the UI immediately upon loading the scene
-        speechBubble.SetActive(false);
-        if (continueButton != null) continueButton.SetActive(false);
-
-        // Wait for the string table to load
-        _stringTable = await LoadStringTableAsync(tableName);
-
-        // Automatically start the dialogue once the text is ready
-        if (_stringTable != null)
-        {
-            StartForestDialogue();
-        }
+        _isContinuePressed = true;
     }
 
-    private async Task<StringTable> LoadStringTableAsync(string targetTableName)
-    {
-        var handle = LocalizationSettings.StringDatabase.GetTableAsync(targetTableName);
-        await handle.Task;
-
-        if (handle.Status == AsyncOperationStatus.Succeeded)
-            return handle.Result;
-
-        Debug.LogError($"Failed to load string table '{targetTableName}'");
-        return null;
-    }
-
-    // Note: The Start() method was removed since initialization and hiding 
-    // the UI is now handled completely within the async Awake() method.
-
-    /// <summary>
-    /// Call this when the forest scene starts (e.g., from an initial click)
-    /// </summary>
     public void StartForestDialogue()
     {
-        scene = 1;
-        
-        // Turn both the bubble and the button back on
-        speechBubble.SetActive(true);
-        if (continueButton != null) continueButton.SetActive(true);
-        
-        LoadDialogue(scene);
+        StartCoroutine(PlayForestDialogue());
     }
 
-    private void LoadDialogue(int currentScene)
+    private IEnumerator PlayForestDialogue()
     {
-        if (_stringTable == null)
+        int lineIndex = 1;
+        while (true)
         {
-            Debug.LogWarning("String table not loaded yet.");
-            return;
+            string key = $"{keyPrefix}_{lineIndex}";
+            var entry = _stringTable.GetEntry(key);
+
+            if (entry == null)
+            {
+                Debug.Log($"No more dialogue lines found for key: {key}");
+                break; // Exit the loop if no more lines are found
+            }
+
+            string dialogueLine = entry.GetLocalizedString();
+            yield return StartCoroutine(TypeLine(dialogueLine));
+
+            // Wait for user input to continue
+            if (continueButton != null)
+            {
+                continueButton.SetActive(true);
+                // Wait exclusively for the UI continue button to be clicked
+                yield return new WaitUntil(() => _isContinuePressed);
+                continueButton.SetActive(false);
+            }
+
+            lineIndex++;
         }
 
-        string key = keyPrefix + currentScene;
-
-        if (_stringTable[key] != null)
-        {
-            currentFullText = _stringTable[key].Value;
-            
-            if (typingCoroutine != null) StopCoroutine(typingCoroutine);
-            typingCoroutine = StartCoroutine(TypeLine(currentFullText));
-        }
-        else
-        {
-            // If the key doesn't exist, we've reached the end of the dialogue
-            EndDialogue();
-        }
+        // Dialogue finished, hide the speech bubble
+        speechBubble.SetActive(false);
     }
 
-    /// <summary>
-    /// Hook this up to your speech continue button's OnClick event
-    /// </summary>
-    public void onContinueClick()
-    {
-        if (isTyping)
-        {
-            // The player clicked while text was still animating. 
-            // Stop the coroutine and instantly show the full text.
-            if (typingCoroutine != null) StopCoroutine(typingCoroutine);
-            speechText.text = currentFullText;
-            isTyping = false;
-        }
-        else
-        {
-            // Text finished animating. Increment scene and load the next string.
-            scene++;
-            LoadDialogue(scene);
-        }
-    }
-
-    private IEnumerator TypeLine(string line)
-    {
-        isTyping = true;
-        speechText.text = ""; // Clear the box
-
-        foreach (char letter in line.ToCharArray())
-        {
-            speechText.text += letter;
-            yield return new WaitForSeconds(typingSpeed);
-        }
-
-        isTyping = false;
-    }
-
-    private void EndDialogue()
+    public override void EndDialogue()
     {
         // Hide the background and button
         speechBubble.SetActive(false);
