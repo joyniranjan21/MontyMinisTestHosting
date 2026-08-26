@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Anemometer_msr_0: -2711187226731233014
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

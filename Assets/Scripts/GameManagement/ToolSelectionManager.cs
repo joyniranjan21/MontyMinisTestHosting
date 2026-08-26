@@ -43,7 +43,7 @@ public class ToolSelectionManager : MonoBehaviour
     {
         if (remainingTools.Count == 0)
         {
-            characterDialogueText.text = "Great job! We've taken all the measurements.";
+            characterDialogueText.text = "Great job! We've found all the tools.";
             return;
         }
 

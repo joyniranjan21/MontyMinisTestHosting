@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      OkiIcon_0: 2704123418392367962
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
