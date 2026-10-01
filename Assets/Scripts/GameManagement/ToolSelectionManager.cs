@@ -44,10 +44,14 @@ public class ToolSelectionManager : MonoBehaviour
         // When the list is empty, phase 1 is complete
         if (remainingTools.Count == 0)
         {
+<<<<<<< HEAD
             characterDialogueText.text = "Great job! Now let's go measure them.";
             
             // Trigger the transition to Phase 2
             onAllToolsFound?.Invoke(); 
+=======
+            characterDialogueText.text = "Great job! We've found all the tools.";
+>>>>>>> a4fa83a1dadd01e4c8cc5554067856277d795a83
             return;
         }
 

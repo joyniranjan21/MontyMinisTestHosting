@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      RainGuage_msr_0: 2409423286251800503
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

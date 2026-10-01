@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      speechcontinue-hover_0: -1193551250876101925
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

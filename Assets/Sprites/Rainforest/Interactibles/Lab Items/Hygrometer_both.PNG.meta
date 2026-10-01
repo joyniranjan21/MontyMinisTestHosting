@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Hygrometer_both_0: 1335550384478581941
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
