@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      HurricaneProgressBar_0: -3132463676947336143
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

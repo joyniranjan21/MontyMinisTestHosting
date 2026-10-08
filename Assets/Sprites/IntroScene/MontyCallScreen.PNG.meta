@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      MontyCallScreen_0: -6675379002342883478
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      AmaviIcon_0: 4765569537052657839
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      HurricaneProgress_0: 5400461792036292407
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
