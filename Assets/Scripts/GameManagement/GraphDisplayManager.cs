@@ -43,6 +43,9 @@ public class GraphDisplayManager : MonoBehaviour
     public string activeQuestion; 
     public string currentCorrectAnswer; 
     
+    [Header("Manager to move to lab scene")]
+    public ResearchProgressionManager researchProgressionManager;
+
     [Tooltip("Tracks the total number of correct graph questions answered across the entire game.")]
     public int totalCorrectGraphAnswers = 0; 
     
@@ -155,6 +158,7 @@ public class GraphDisplayManager : MonoBehaviour
         }
         else
         {
+            researchProgressionManager.CompleteScrapLoop();
             if (confidenceManager != null)
             {
                 confidenceManager.SetupConfidenceMeter(ConfidenceManager.ReturnRoute.GraphPinboard);
