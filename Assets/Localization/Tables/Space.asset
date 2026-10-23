@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5be51871efa6c3e4eae1703925c8f5ac, type: 3}
+  m_Name: Space
+  m_EditorClassIdentifier: 
+  m_SharedTableData: {fileID: 11400000, guid: c44a2ede53afbb544a2fce524b2a2713, type: 2}
+  m_Tables:
+  - {fileID: 11400000, guid: 777f915be9a59bd43b70256abaf82d80, type: 2}
+  - {fileID: 11400000, guid: 474651a2b538fd14ca4deae68153d7b3, type: 2}
+  - {fileID: 11400000, guid: e45edfa3f874b5f4aa5093f78595a3a8, type: 2}
+  - {fileID: 11400000, guid: 2614244ba9eb3044ebb0385dde74ea92, type: 2}
+  - {fileID: 11400000, guid: 4ac15fdffe07b794ba3557d99323e5c4, type: 2}
+  - {fileID: 11400000, guid: 9faa241cfd52afc4981f915e1936bd78, type: 2}
+  - {fileID: 11400000, guid: 11b6a9121131c054f920b9b87c05e27e, type: 2}
+  m_Extensions: []
+  m_Group: String Table
+  references:
+    version: 2
+    RefIds: []

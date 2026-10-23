@@ -26,8 +26,8 @@ public abstract class GeneralDialogueManager : MonoBehaviour
     
     // Typewriter state tracking
     private bool isTyping = false;
-    private string currentFullText = "";
-    private Coroutine typingCoroutine;
+    protected string currentFullText = "";
+    protected Coroutine typingCoroutine;
 
     private async void Awake()
     {
@@ -86,7 +86,7 @@ public abstract class GeneralDialogueManager : MonoBehaviour
         LoadDialogue(scene);
     }
 
-    private void LoadDialogue(int currentScene)
+    protected virtual void LoadDialogue(int currentScene)
     {
         if (_stringTable == null)
         {

@@ -19,11 +19,19 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 37627772928
-    m_Localized: Oh No! It looks like the lab is not set up yet.
+    m_Localized: 'Amavi: Oh No! Where is our equipment?'
     m_Metadata:
       m_Items: []
   - m_Id: 181895053312
-    m_Localized: Would you mind helping me set things up? It would help me out greatly.
+    m_Localized: 'Oki: Seems that whoever messed with our machines and data is also
+      now trying to sabotage our tools. No worries, we should have some old tools
+      in the storage room. Amavi, help our friend find the tools, and we can get
+      this lab set up again.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28630865043660800
+    m_Localized: "Amavi: I\u2019ll help you identify the tools we need, and you locate
+      them!"
     m_Metadata:
       m_Items: []
   references:
