@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Archive_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 1b4a935de835abf4ebe5c3bcb92dae32, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 107588755456
+    m_Localized: "Oki: Meet Amavi, she\u2019s one of my apprentices. "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 168716541952
+    m_Localized: "Amavi: Hello, I\u2019m Amavi. I\u2019m a Puerto Rican Amazon, also
+      known as an Iguaca parrot. Both my species and Oki\u2019s live on the Island
+      of Puerto Rico. We are both considered endangered species because there are
+      environmental changes on the island that threaten our habitats."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 201172066304
+    m_Localized: "Oki: That\u2019s true! That\u2019s why we need to do our part and
+      make sure our friends are well informed about the changing environment around
+      them."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 233388515328
+    m_Localized: 'Oki: Amavi, our friend here, is joining us to help investigate
+      a cloud formation headed towards the island. As my star researcher, I trust
+      you can demonstrate how everything works around here.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 264220844032
+    m_Localized: 'Amavi: Yes, I can do that!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 311570341888
+    m_Localized: 'Amavi: Here in the archives, we keep records of the past weather
+      graphs and conditions all across the world. This helps us better understand
+      how the weather is evolving around us and make more accurate predictions.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 367841124352
+    m_Localized: 'Amavi: Feel free to take a look around, and I will explain anything
+      you have questions about or are unsure of!'
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

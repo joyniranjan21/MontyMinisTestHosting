@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      New York Temperature_0: 6855622820639889060
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

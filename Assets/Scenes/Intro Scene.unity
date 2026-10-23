@@ -565,6 +565,57 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 87123664}
   m_CullTransparentMesh: 1
+--- !u!1 &109591083
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 109591085}
+  - component: {fileID: 109591084}
+  m_Layer: 0
+  m_Name: ArchiveDialogueManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &109591084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 109591083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf0fc01961bd0c444ae232baddcd6986, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speechBubble: {fileID: 979399718}
+  speechText: {fileID: 559734030}
+  continueButton: {fileID: 1036660369}
+  tableName: Archive
+  keyPrefix: A
+  typingSpeed: 0.03
+  autoStartDialogue: 0
+--- !u!4 &109591085
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 109591083}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 344.33255, y: -91.67748, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &113352893
 GameObject:
   m_ObjectHideFlags: 0
@@ -2825,7 +2876,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.27, y: -0.04}
+  m_AnchoredPosition: {x: 0.29, y: -0.06}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &559734030
@@ -2879,7 +2930,7 @@ MonoBehaviour:
   m_fontSizeBase: 2.5
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 2
+  m_fontSizeMin: 1
   m_fontSizeMax: 2.5
   m_fontStyle: 0
   m_HorizontalAlignment: 1
@@ -2913,7 +2964,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 7.296582, y: 1.974249, z: 7.960928, w: 2.001714}
+  m_margin: {x: 8.446468, y: 1.974249, z: 7.943075, w: 2.229396}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -4918,7 +4969,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_TargetDisplay: 0
 --- !u!1 &836453529
 GameObject:
@@ -5403,7 +5454,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_TargetDisplay: 0
 --- !u!1 &891024087
 GameObject:
@@ -6227,7 +6278,9 @@ MonoBehaviour:
   tableName: Forest
   keyPrefix: F
   typingSpeed: 0.03
+  autoStartDialogue: 1
   cameraPanner: {fileID: 875179176}
+  archiveDM: {fileID: 109591084}
 --- !u!1 &979399718
 GameObject:
   m_ObjectHideFlags: 0
@@ -6474,19 +6527,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1036660372}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 972955601}
-        m_TargetAssemblyTypeName: GeneralDialogueManager, Assembly-CSharp
-        m_MethodName: onContinueClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1036660372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6605,7 +6646,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 3463991974477412217, guid: d247a442e9152ae4098295d32d485c54, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -7163,14 +7204,14 @@ RectTransform:
   m_GameObject: {fileID: 1148628501}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.40201855, y: 0.41368377, z: 0.5171176}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1292812561}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.72, y: 0.03}
   m_SizeDelta: {x: 5.57, y: 1.33}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!61 &1148628503
@@ -7211,7 +7252,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.57, y: 1.33}
+    oldSize: {x: 11.23, y: 3.74}
     newSize: {x: 5.57, y: 1.33}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -7263,7 +7304,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 7
-  m_Sprite: {fileID: -6774760405736255389, guid: c98de62c2fc620c4caed21732ee6c61a, type: 3}
+  m_Sprite: {fileID: 3463991974477412217, guid: d247a442e9152ae4098295d32d485c54, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -8723,7 +8764,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 3463991974477412217, guid: d247a442e9152ae4098295d32d485c54, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -9495,7 +9536,7 @@ MonoBehaviour:
   questionTextUI: {fileID: 1187918961}
   activeQuestion: 
   currentCorrectAnswer: 
-  researchProgressionManager: {fileID: 0}
+  researchProgressionManager: {fileID: 181213473}
   totalCorrectGraphAnswers: 0
 --- !u!1 &1554258313
 GameObject:
@@ -11435,6 +11476,28 @@ MonoBehaviour:
       - The total area a hurricane spreads across
       - The wind speed and strength of a hurricane
       - The number of days a hurricane lasts
+    - questionText: Where are hurricanes most likely to form? (1 point)
+      answers:
+      - Cold, dry regions near the North Pole
+      - Tropical and subtropical regions
+      - Mountain areas far from oceans
+      - Deserts with very little rainfall
+    - questionText: A scientist observes that ocean water in an area is becoming
+        cooler. Based on the passage, what is the most likely effect on a hurricane
+        moving over that water? (3 points)
+      answers:
+      - The hurricane will grow stronger because cooler water gives it more energy.
+      - The hurricane may weaken because it has less warm water to provide energy.
+      - The hurricane will change into a tornado immediately.
+      - The hurricane will begin moving in the opposite direction.
+    - questionText: "A coastal town is preparing for a hurricane with wind speeds
+        of 120 miles per hour. Which prediction is best supported by the passage?
+        (2 points)\r"
+      answers:
+      - The town should prepare for possible power outages and serious damage.
+      - The town does not need to prepare because the storm is not a major hurricane.
+      - The town should expect winds below 74 miles per hour during the storm.
+      - The town should expect the hurricane to disappear when it reaches land.
   - passageHeading: 'Weather Tools: Mini Passages'
     passageBody: "Meteorologists are scientists who study and predict the weather.
       They use special tools to collect weather data.\r\n\r\nThermometer:\r\n\r\nA
@@ -11485,6 +11548,35 @@ MonoBehaviour:
       - Air pressure
       - Wind speed
       - Humidity
+    - questionText: What is the amount of moisture in the air called? (1 point)
+      answers:
+      - Humidity
+      - Precipitation
+      - Air Pressure
+      - Kinetic Energy
+    - questionText: Which instrument allows us to track the amount of precipitation
+        in an area? (1 point)
+      answers:
+      - Rain gauge
+      - Wind vane
+      - Thermometer
+      - Barometer
+    - questionText: A student places a thermometer outside on a very hot day. What
+        will most likely happen to the red liquid inside the thermometer, and why?
+        (2 points)
+      answers:
+      - The liquid will rise because its particles move faster and spread apart.
+      - The liquid will fall because its particles move faster and spread apart.
+      - The liquid will freeze because the temperature is higher.
+      - The liquid will stay the same because heat does not affect particles.
+    - questionText: A meteorologist sees high humidity, falling air pressure, and
+        increasing wind speed in an area. What is the best conclusion based on the
+        passage? (3 points)
+      answers:
+      - The area may have a storm on the way.
+      - The area will have clear skies and calm weather.
+      - The area cannot have rain because humidity is high.
+      - The area will snow, regardless of temperature.
   passageHeadingUI: {fileID: 230103538}
   passageBodyUI: {fileID: 87123666}
   questionTextUI: {fileID: 1860494217}
@@ -12344,8 +12436,9 @@ SceneRoots:
   - {fileID: 1100494750}
   - {fileID: 283824917}
   - {fileID: 1667218347}
-  - {fileID: 972955600}
   - {fileID: 1530326864}
   - {fileID: 710997369}
   - {fileID: 1952198556}
   - {fileID: 181213474}
+  - {fileID: 972955600}
+  - {fileID: 109591085}

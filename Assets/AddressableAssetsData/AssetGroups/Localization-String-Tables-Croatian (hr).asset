@@ -15,6 +15,12 @@ MonoBehaviour:
   m_GroupName: Localization-String-Tables-Croatian (hr)
   m_GUID: d31c9f4af2f15c74a9444c5e0cd8e1f3
   m_SerializeEntries:
+  - m_GUID: 6a65ef2dd8086ab45a040991dd5e6793
+    m_Address: Archive_hr
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-hr
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: eade7af54f1c2994ca8c38aeba9706c1
     m_Address: Forest_hr
     m_ReadOnly: 1

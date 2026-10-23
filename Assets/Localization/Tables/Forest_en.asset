@@ -19,15 +19,50 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 6732529664
-    m_Localized: Coqui says stuff...
+    m_Localized: "Rainforest Frog: Hello! I haven\u2019t seen you around here before."
     m_Metadata:
       m_Items: []
   - m_Id: 203734794240
-    m_Localized: Coqui continues yapping...
+    m_Localized: 'You: I was sent here by Monty to investigate a strange cloud formation
+      heading towards the islands.'
     m_Metadata:
       m_Items: []
   - m_Id: 253995139072
-    m_Localized: Coqui yapping done...
+    m_Localized: "Rainforest Frog: A strange cloud formation. Well, that\u2019s concerning;
+      it\u2019s a good thing that Monty sent you here."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49277641832407040
+    m_Localized: "Rainforest Frog: My name is Oki. I\u2019m a coqui frog. Our species
+      is named after the iconic sounds we make when communicating. We are quite small,
+      but very recognizable here on the island."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49277801127878656
+    m_Localized: "Oki: I\u2019m the head Meteorologist here at Monty\u2019s Weather
+      Research Station. Meteorologists are scientists who study and help predict
+      the Earth\u2019s atmospheric phenomena, such as the weather you experience
+      every day."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49277853627981824
+    m_Localized: "Oki: Unfortunately, our Research Center was recently sabotaged.
+      Our weather analysis machines and our communications have been damaged, and
+      we\u2019ve been unable to report on the weather like we used to."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49277891578044416
+    m_Localized: "Oki: If you\u2019re up for it, I\u2019ll teach you everything there
+      is to know about analyzing and recording data the traditional way. With your
+      help, I\u2019m sure we\u2019ll get everything up and running in no time."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49277937526644736
+    m_Localized: "You: I\u2019m ready!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49277991159209984
+    m_Localized: 'Oki: Perfect! Follow me to the archives.'
     m_Metadata:
       m_Items: []
   references:

@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Vine_SliderBar_0: -4825347752113178945
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

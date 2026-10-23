@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.Localization.Settings;
 using UnityEngine.Localization.Tables;
 using UnityEngine.ResourceManagement.AsyncOperations;
+using UnityEngine.UI;
 
 public abstract class GeneralDialogueManager : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public abstract class GeneralDialogueManager : MonoBehaviour
     [SerializeField] protected string keyPrefix = "F"; // e.g., "F_1", "F_2" instead of "R1_1"
     [SerializeField] private float typingSpeed = 0.03f;
 
+    [SerializeField] protected bool autoStartDialogue = true;
     protected StringTable _stringTable;
     private int scene = 1;
     
@@ -36,8 +38,8 @@ public abstract class GeneralDialogueManager : MonoBehaviour
         // Wait for the string table to load
         _stringTable = await LoadStringTableAsync(tableName);
 
-        // Automatically start the dialogue once the text is ready
-        if (_stringTable != null)
+        // MODIFIED: Only start automatically if the toggle is checked
+        if (_stringTable != null && autoStartDialogue)
         {
             StartDialogue();
         }
@@ -65,9 +67,21 @@ public abstract class GeneralDialogueManager : MonoBehaviour
     {
         scene = 1;
         
-        // Turn both the bubble and the button back on
+        // Turn the UI back on
         speechBubble.SetActive(true);
-        if (continueButton != null) continueButton.SetActive(true);
+        speechText.gameObject.SetActive(true); // <-- This wakes the text back up!
+        
+        if (continueButton != null) 
+        {
+            continueButton.SetActive(true);
+            
+            Button btn = continueButton.GetComponent<Button>();
+            if (btn != null)
+            {
+                btn.onClick.RemoveAllListeners();
+                btn.onClick.AddListener(onContinueClick);
+            }
+        }
         
         LoadDialogue(scene);
     }
