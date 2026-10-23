@@ -1,54 +1,170 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro; 
 
 public class GraphDisplayManager : MonoBehaviour
 {
-    // 1. Create a custom container for your paired data
+    [System.Serializable]
+    public struct QuestionData
+    {
+        public Sprite graphSprite; 
+        [TextArea(2, 4)]
+        public string questionText;
+        public string[] answers; 
+    }
+
     [System.Serializable]
     public struct GraphData
     {
-        public string label; // Just to keep your Inspector organized
-        public Sprite graphSprite;
-        [TextArea(2, 4)]
-        public string questionText; // Can be raw text or a key for your dialogue/localization manager
+        public string label; 
+        public QuestionData[] questions; 
     }
 
     [Header("Camera Control")]
-    public CameraPanner panner;
-
-    [Tooltip("Set this to your camera's original zoomed-out size (often 5)")]
+    public CameraPanner graphViewPanner; 
+    public CameraPanner questionViewPanner; 
+    
+    [Header("Confidence Handoff")]
+    public CameraPanner confidencePanner; 
+    public ConfidenceManager confidenceManager; 
     public float defaultCameraSize = 535;
 
     [Header("Graph Database")]
-    [Tooltip("Add all 6 scraps and their questions here")]
     public GraphData[] allScraps;
 
     [Header("UI References")]
-    public Image zoomedGraphImage;       // The Image component in the right canvas
-    public Image amaviCanvasGraphImage; // The Image component in the bottom question canvas
-    
-    [Header("Saved State (Read-Only)")]
-    public string activeQuestion; // Your dialogue script will read from this variable later
+    public Image zoomedGraphImage;       
+    public Image amaviCanvasGraphImage; 
+    public TextMeshProUGUI[] answerChoiceUI; 
+    public TextMeshProUGUI questionTextUI; 
 
-    // 2. Call this from the OnClick event using an integer
+    [Header("Saved State (Read-Only)")]
+    public string activeQuestion; 
+    public string currentCorrectAnswer; 
+    
+    [Tooltip("Tracks the total number of correct graph questions answered across the entire game.")]
+    public int totalCorrectGraphAnswers = 0; 
+    
+    private int currentScrapIndex = 0;
+    private int currentQuestionIndex = 0;
+    private int currentViewIndex = 0; 
+
     public void LoadScrapByIndex(int scrapIndex)
     {
         if (scrapIndex < 0 || scrapIndex >= allScraps.Length) return;
 
-        // Fetch the data paired with the clicked button
-        GraphData selectedScrap = allScraps[scrapIndex];
+        currentScrapIndex = scrapIndex;
+        currentQuestionIndex = 0; 
+        currentViewIndex = 0; 
 
-        // Update the visual sprites on both canvases at once
-        if (zoomedGraphImage != null) zoomedGraphImage.sprite = selectedScrap.graphSprite;
-        if (amaviCanvasGraphImage != null) amaviCanvasGraphImage.sprite = selectedScrap.graphSprite;
-
-        // SAVE THE QUESTION IN MEMORY
-        activeQuestion = selectedScrap.questionText;
-        
-        if (panner != null)
+        GraphData selectedScrap = allScraps[currentScrapIndex];
+        if (selectedScrap.questions != null && selectedScrap.questions.Length > 0)
         {
-            panner.mainCamera.orthographicSize = defaultCameraSize;
-            panner.StartPanToTarget();
+            if (zoomedGraphImage != null) zoomedGraphImage.sprite = selectedScrap.questions[0].graphSprite;
+        }
+
+        if (graphViewPanner != null)
+        {
+            graphViewPanner.mainCamera.orthographicSize = defaultCameraSize;
+            graphViewPanner.StartPanToTarget();
+        }
+    }
+
+    public void OnContinueButtonClicked()
+    {
+        GraphData currentScrap = allScraps[currentScrapIndex];
+        currentViewIndex++;
+
+        if (currentViewIndex < currentScrap.questions.Length)
+        {
+            if (zoomedGraphImage != null) zoomedGraphImage.sprite = currentScrap.questions[currentViewIndex].graphSprite;
+        }
+        else
+        {
+            LoadCurrentQuestionData();
+
+            if (questionViewPanner != null)
+            {
+                questionViewPanner.mainCamera.orthographicSize = defaultCameraSize;
+                questionViewPanner.StartPanToTarget();
+            }
+        }
+    }
+
+    private void LoadCurrentQuestionData()
+    {
+        GraphData currentScrap = allScraps[currentScrapIndex];
+        if (currentScrap.questions == null || currentScrap.questions.Length == 0) return;
+
+        QuestionData currentQ = currentScrap.questions[currentQuestionIndex];
+        
+        if (zoomedGraphImage != null) zoomedGraphImage.sprite = currentQ.graphSprite;
+        if (amaviCanvasGraphImage != null) amaviCanvasGraphImage.sprite = currentQ.graphSprite;
+
+        activeQuestion = currentQ.questionText;
+        if (questionTextUI != null) questionTextUI.text = activeQuestion;
+
+        if (currentQ.answers != null && currentQ.answers.Length > 0)
+        {
+            currentCorrectAnswer = currentQ.answers[0];
+            RandomizeAndDisplayAnswers(currentQ.answers);
+        }
+    }
+
+    private void RandomizeAndDisplayAnswers(string[] originalAnswers)
+    {
+        List<string> shuffledAnswers = new List<string>(originalAnswers);
+        
+        for (int i = 0; i < shuffledAnswers.Count; i++)
+        {
+            string temp = shuffledAnswers[i];
+            int randomIndex = Random.Range(i, shuffledAnswers.Count);
+            shuffledAnswers[i] = shuffledAnswers[randomIndex];
+            shuffledAnswers[randomIndex] = temp;
+        }
+
+        for (int i = 0; i < answerChoiceUI.Length; i++)
+        {
+            if (i < shuffledAnswers.Count && answerChoiceUI[i] != null)
+            {
+                answerChoiceUI[i].text = shuffledAnswers[i];
+            }
+        }
+    }
+
+    public void CheckAnswer(int buttonIndex)
+    {
+        bool isCorrect = (answerChoiceUI[buttonIndex].text == currentCorrectAnswer);
+        
+        if (isCorrect) 
+        {
+            totalCorrectGraphAnswers++;
+            Debug.Log($"Correct! Total Graph Score: {totalCorrectGraphAnswers}");
+        }
+        else 
+        {
+            Debug.Log("Incorrect!");
+        }
+
+        currentQuestionIndex++;
+        
+        if (currentQuestionIndex < allScraps[currentScrapIndex].questions.Length)
+        {
+            LoadCurrentQuestionData(); 
+        }
+        else
+        {
+            if (confidenceManager != null)
+            {
+                confidenceManager.SetupConfidenceMeter(ConfidenceManager.ReturnRoute.GraphPinboard);
+            }
+
+            if (confidencePanner != null)
+            {
+                confidencePanner.mainCamera.orthographicSize = defaultCameraSize;
+                confidencePanner.StartPanToTarget();
+            }
         }
     }
 }
